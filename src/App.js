@@ -1,10 +1,23 @@
-import './App.css';
-import WelcomeScreen from './pages/WelcomeScreen/WelcomeScreen';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import PageWrapper from "./components/PageWrapper/PageWrapper";
+import WelcomeScreen from "./pages/WelcomeScreen/WelcomeScreen";
+import InformationSharingScreen from "./pages/InformationSharingScreen/InformationSharingScreen";
 
 function App() {
   return (
     <div className="App">
-     <WelcomeScreen/>
+      <BrowserRouter>
+        <PageWrapper>
+          <Routes>
+            <Route path="/" element={<WelcomeScreen />} />
+            <Route
+              path="/info-sharing"
+              element={<InformationSharingScreen />}
+            />
+          </Routes>
+        </PageWrapper>
+      </BrowserRouter>
     </div>
   );
 }
