@@ -1,7 +1,7 @@
 import React from "react";
 import "./WelcomeScreen.css";
-import ShareInfoButton from "../../components/ShareInfoButton/ShareInfoButton";
-import ActionButton from "../../components/ActionButton/ActionButton";
+import ShareInfoButton from "../../components/Buttons/ShareInfoButton/ShareInfoButton";
+import ActionButton from "../../components/Buttons/ActionButton/ActionButton";
 
 const WelcomeScreen = () => {
   return (

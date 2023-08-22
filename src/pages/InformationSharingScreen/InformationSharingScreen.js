@@ -1,6 +1,6 @@
 import React from "react";
 import Heading from "../../components/Heading/Heading";
-import OptionButton from "../../components/OptionButton/OptionButton";
+import OptionButton from "../../components/Buttons/OptionButton/OptionButton";
 
 const InformationSharingScreen = () => {
   return (
