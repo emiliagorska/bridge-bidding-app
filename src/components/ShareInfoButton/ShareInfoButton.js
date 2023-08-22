@@ -1,19 +1,18 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
-//import "bootstrap/dist/css/bootstrap.min.css";
-import "./ShareInfoButton.css";
-import VariantsExample from "./ShareInfoButton.style";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import { StyledButton } from "./ShareInfoButton.style";
 
-const ShareInfoButton = ({ children, marginBottom }) => {
+const ShareInfoButton = ({ children, disabled, ...props }) => {
   return (
     <>
-      <Button
-        variant="outline-success"
-        className="shareInfoButton"
-        style={{ marginBottom: marginBottom }}
+      <StyledButton
+        variant="contained"
+        color="primary"
+        disabled={disabled}
+        {...props}
       >
-        {children}
-      </Button>
+        {children} <AddCircleOutlineIcon />
+      </StyledButton>
     </>
   );
 };

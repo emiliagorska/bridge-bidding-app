@@ -1,17 +1,12 @@
 import React from "react";
-import "./ActionButton.css";
-import { Button } from "react-bootstrap";
+import { StyledButton } from "./ActionButton.styles";
 
-const ActionButton = ({ children, marginBottom }) => {
+const ActionButton = ({ children, ...props }) => {
   return (
     <>
-      <Button
-        variant="success"
-        className="actionButton"
-        style={{ marginBottom: marginBottom }}
-      >
+      <StyledButton color="primary" variant="contained" {...props}>
         {children}
-      </Button>
+      </StyledButton>
     </>
   );
 };

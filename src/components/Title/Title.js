@@ -1,15 +1,12 @@
 import React from "react";
-import "./Title.css";
-import { Container, Navbar } from "react-bootstrap";
+import { StyledTitle } from "./Title.styles";
 
-const Title = ({ children, marginBottom }) => {
+const Title = ({ children, ...props }) => {
   return (
     <>
-      <Navbar bg="success" data-bs-theme="dark" className="titleContainer">
-        <Container>
-          <Navbar.Brand className="title">{children}</Navbar.Brand>
-        </Container>
-      </Navbar>
+      <StyledTitle color="primary" {...props}>
+        Bidding stage
+      </StyledTitle>
     </>
   );
 };

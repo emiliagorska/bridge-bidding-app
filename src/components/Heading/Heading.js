@@ -1,14 +1,14 @@
 import React from "react";
+import { StyledHeading } from "./Heading.styles";
 
-const Heading = ({ children, marginBottom, marginTop }) => {
+const Heading = ({ children, ...props }) => {
   return (
     <>
-      <div
-        className="shareInfoButton"
-        style={{ marginBottom: marginBottom, marginTop: marginTop }}
-      >
-        <h2>{children}</h2>
-      </div>
+      <>
+        <StyledHeading color="primary" {...props}>
+          {children}
+        </StyledHeading>
+      </>
     </>
   );
 };
