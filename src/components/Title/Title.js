@@ -1,11 +1,16 @@
 import React from "react";
 import "./Title.css";
+import { Container, Navbar } from "react-bootstrap";
 
 const Title = ({ children, marginBottom }) => {
   return (
-    <div className="titleContainer">
-      <h1>{children}</h1>
-    </div>
+    <>
+      <Navbar bg="success" data-bs-theme="dark" className="titleContainer">
+        <Container>
+          <Navbar.Brand className="title">{children}</Navbar.Brand>
+        </Container>
+      </Navbar>
+    </>
   );
 };
 

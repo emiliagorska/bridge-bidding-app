@@ -1,12 +1,17 @@
 import React from "react";
 import "./ActionButton.css";
+import { Button } from "react-bootstrap";
 
 const ActionButton = ({ children, marginBottom }) => {
   return (
     <>
-      <button className="actionButton" style={{ marginBottom: marginBottom }}>
+      <Button
+        variant="success"
+        className="actionButton"
+        style={{ marginBottom: marginBottom }}
+      >
         {children}
-      </button>
+      </Button>
     </>
   );
 };
