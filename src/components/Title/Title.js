@@ -1,11 +1,13 @@
 import React from "react";
-import "./Title.css";
+import { StyledTitle } from "./Title.styles";
 
-const Title = ({ children, marginBottom }) => {
+const Title = ({ children, ...props }) => {
   return (
-    <div className="titleContainer">
-      <h1>{children}</h1>
-    </div>
+    <>
+      <StyledTitle color="primary" {...props}>
+        Bidding stage
+      </StyledTitle>
+    </>
   );
 };
 
