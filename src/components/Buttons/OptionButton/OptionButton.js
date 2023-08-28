@@ -4,7 +4,7 @@ import { StyledOptionButton } from "./OptionButton.styles";
 const OptionButton = ({ children, ...props }) => {
   return (
     <>
-      <StyledOptionButton color="primary" variant="contained" {...props}>
+      <StyledOptionButton color="primary" variant="outlined" {...props}>
         {children}
       </StyledOptionButton>
     </>

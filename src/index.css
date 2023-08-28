@@ -1,4 +1,13 @@
 :root {
     --gray: rgba(217, 217, 217, 0.50);
     --darkergray: rgba(217, 217, 217);
+    --red: red;
   }
+
+/* doesn't work */
+  html, body, #app, #app>div {
+    height: 100%
+  }
+
+  [data-reactroot] 
+        {height: 100% !important; }

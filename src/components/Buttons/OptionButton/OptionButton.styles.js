@@ -5,6 +5,9 @@ export const StyledOptionButton = styled(Button)`
   border-radius: 25px;
   width: 100%;
   text-transform: none;
+  color: black !important;
+  border: 2px solid rgba(18, 165, 130, 1) !important;
+  background-color: white !important;
   font-size: 24px;
   line-height: 32px;
   text-align: left;

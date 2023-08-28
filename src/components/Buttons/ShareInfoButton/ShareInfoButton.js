@@ -6,7 +6,7 @@ const ShareInfoButton = ({ children, disabled, ...props }) => {
   return (
     <>
       <StyledButton
-        variant="contained"
+        variant="outlined"
         color="primary"
         disabled={disabled}
         {...props}

@@ -4,7 +4,7 @@ import { StyledTitle } from "./Title.styles";
 const Title = ({ children, ...props }) => {
   return (
     <>
-      <StyledTitle color="primary" {...props}>
+      <StyledTitle color="ternary" {...props}>
         Bidding stage
       </StyledTitle>
     </>
