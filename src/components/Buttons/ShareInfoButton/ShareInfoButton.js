@@ -2,7 +2,12 @@ import React from "react";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import { StyledButton } from "./ShareInfoButton.style";
 
-const ShareInfoButton = ({ children, disabled, ...props }) => {
+const ShareInfoButton = ({
+  children,
+  disabled,
+  dontShowPlusIcon,
+  ...props
+}) => {
   return (
     <>
       <StyledButton
@@ -11,7 +16,7 @@ const ShareInfoButton = ({ children, disabled, ...props }) => {
         disabled={disabled}
         {...props}
       >
-        {children} <AddCircleOutlineIcon />
+        {children} {!dontShowPlusIcon && <AddCircleOutlineIcon />}
       </StyledButton>
     </>
   );
