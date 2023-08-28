@@ -6,7 +6,7 @@ const InformationSharingScreen = () => {
   return (
     <>
       <Heading marginTop="20px" marginBottom="32px">
-        Which information would you like to share?
+        <b>Which information would you like to share?</b>
       </Heading>
       <OptionButton marginBottom="8px">1. High Card Points</OptionButton>
       <OptionButton marginBottom="8px">
