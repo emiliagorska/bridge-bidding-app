@@ -5,6 +5,7 @@ import WelcomeScreen from "./pages/WelcomeScreen/WelcomeScreen";
 import InformationSharingScreen from "./pages/InformationSharingScreen/InformationSharingScreen";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import HighCardPointsScreen from "./pages/HighCardPointsScreen/HighCardPointsScreen";
+import FirstInformationSharedScreen from "./pages/FirstInformationSharedScreen/FirstInformationSharedScreen";
 
 const theme = createTheme({
   palette: {
@@ -35,6 +36,10 @@ function App() {
               <Route
                 path="/high-card-points"
                 element={<HighCardPointsScreen />}
+              />
+              <Route
+                path="/first-info-shared"
+                element={<FirstInformationSharedScreen />}
               />
             </Routes>
           </PageWrapper>
