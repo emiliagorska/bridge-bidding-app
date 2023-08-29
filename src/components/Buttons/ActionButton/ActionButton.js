@@ -4,9 +4,8 @@ import { StyledButton } from "./ActionButton.styles";
 const ActionButton = ({ children, ...props }) => {
   return (
     <>
-      <StyledButton color="primary" variant="contained" {...props}>
-        {children}
-      </StyledButton>
+      {/* <StyledButton color="primary" variant="contained" {...props}> */}
+      <StyledButton {...props}>{children}</StyledButton>
     </>
   );
 };
