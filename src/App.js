@@ -7,7 +7,12 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import HighCardPointsScreen from "./pages/HighCardPointsScreen/HighCardPointsScreen";
 import FirstInformationSharedScreen from "./pages/FirstInformationSharedScreen/FirstInformationSharedScreen";
 import CardDistributionScreen from "./pages/CardDistributionScreen/CardDistributionScreen";
-import { BiddingProvider } from "./BiddingContext";
+import { createContext, useReducer } from "react";
+import {
+  BiddingContext,
+  BiddingDispatchContext,
+  BiddingProvider,
+} from "./BiddingContext";
 
 const theme = createTheme({
   palette: {
@@ -20,34 +25,43 @@ const theme = createTheme({
     ternary: {
       main: "rgba(63, 62, 62, 1)",
     },
+    error: {
+      main: "#ffbeba",
+    },
   },
 });
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <div className="App">
-        <BrowserRouter>
-          <PageWrapper style={{ height: "100%" }}>
-            <Routes>
-              <Route path="/" element={<WelcomeScreen />} />
-              <Route
-                path="/info-sharing"
-                element={<InformationSharingScreen />}
-              />
-              <Route
-                path="/high-card-points"
-                element={<HighCardPointsScreen />}
-              />
-              <Route
-                path="/first-info-shared"
-                element={<FirstInformationSharedScreen />}
-              />
-            </Routes>
-          </PageWrapper>
-        </BrowserRouter>
-      </div>
-    </ThemeProvider>
+    <BiddingProvider>
+      <ThemeProvider theme={theme}>
+        <div className="App">
+          <BrowserRouter>
+            <PageWrapper style={{ height: "100%" }}>
+              <Routes>
+                <Route path="/" element={<WelcomeScreen />} />
+                <Route
+                  path="/info-sharing"
+                  element={<InformationSharingScreen />}
+                />
+                <Route
+                  path="/high-card-points"
+                  element={<HighCardPointsScreen />}
+                />
+                <Route
+                  path="/card-distribution"
+                  element={<CardDistributionScreen />}
+                />
+                <Route
+                  path="/first-info-shared"
+                  element={<FirstInformationSharedScreen />}
+                />
+              </Routes>
+            </PageWrapper>
+          </BrowserRouter>
+        </div>
+      </ThemeProvider>
+    </BiddingProvider>
   );
 }
 
