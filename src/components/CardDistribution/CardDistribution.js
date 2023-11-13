@@ -1,43 +1,57 @@
-import React, { useState } from "react";
-import { StyledDiv, StyledTextField } from "./CardDistribution.style";
+import React, { useEffect, useState } from "react";
+import {
+  ErrorContainer,
+  ErrorMessage,
+  StyledDiv,
+  StyledTextField,
+} from "./CardDistribution.style";
 
-const CardDistribution = ({ children, ...props }) => {
-  const [firstNumber, setFirstNumber] = useState();
-  const [secondNumber, setSecondNumber] = useState();
-  const [thirdNumber, setThirdNumber] = useState();
-  const [forthNumber, setForthNumber] = useState();
-  const [message, setMessage] = useState();
-  console.log("first number:", firstNumber);
+const CardDistribution = ({ children, handleError, ...props }) => {
+  const [numbersArray, setNumbersArray] = useState([0, 0, 0, 0]);
+  const [error, setError] = useState(true);
 
-  if (
-    !(firstNumber >= secondNumber) ||
-    !(secondNumber >= thirdNumber) ||
-    !(thirdNumber >= forthNumber) ||
-    !(firstNumber + secondNumber + thirdNumber + forthNumber === 13)
-  ) {
-    // setMessage(
-    //   "Please make sure you've entered the numbers in descending order and that their sum is 13 (the total number of your cards"
-    // );
-  }
+  useEffect(() => {
+    var sumOfNumbers = numbersArray.reduce(function (a, b) {
+      return parseInt(a) + parseInt(b);
+    });
+    if (sumOfNumbers !== 13) {
+      handleError(true);
+      return setError(true);
+    }
+    for (let i = 1; i < 4; i++) {
+      if (numbersArray[i] > numbersArray[i - 1]) {
+        console.log("ERROR TRUE::::", numbersArray);
+        handleError(true);
+        return setError(true);
+      }
+      handleError(false);
+      setError(false);
+      console.log("Error false:::", numbersArray);
+    }
+  }, [numbersArray]);
+
   return (
     <>
       <StyledDiv>
         <StyledTextField
-          id="outlined-basic"
-          variant="outlined"
-          onChange={(e) => setFirstNumber(e.target.value)}
+          onChange={(e) =>
+            setNumbersArray(numbersArray.with(0, e.target.value))
+          }
         ></StyledTextField>
         <StyledTextField
-          id="outlined-basic"
-          variant="outlined"
+          onChange={(e) =>
+            setNumbersArray(numbersArray.with(1, e.target.value))
+          }
         ></StyledTextField>
         <StyledTextField
-          id="outlined-basic"
-          variant="outlined"
+          onChange={(e) =>
+            setNumbersArray(numbersArray.with(2, e.target.value))
+          }
         ></StyledTextField>
         <StyledTextField
-          id="outlined-basic"
-          variant="outlined"
+          onChange={(e) =>
+            setNumbersArray(numbersArray.with(3, e.target.value))
+          }
         ></StyledTextField>
       </StyledDiv>
     </>
