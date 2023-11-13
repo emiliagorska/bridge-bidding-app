@@ -4,10 +4,11 @@ import ShareInfoButton from "../../components/Buttons/ShareInfoButton/ShareInfoB
 import ActionButton from "../../components/Buttons/ActionButton/ActionButton";
 
 const WelcomeScreen = () => {
+  
   return (
     <>
-      <ShareInfoButton marginTop="32px" marginBottom="16px">
-        Share Information{" "}
+      <ShareInfoButton marginTop="48px" marginBottom="16px" onClick={}>
+        Share Information{"    "}
       </ShareInfoButton>
       <ShareInfoButton marginBottom="32px" disabled>
         Share Information

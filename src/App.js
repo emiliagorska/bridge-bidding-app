@@ -6,6 +6,8 @@ import InformationSharingScreen from "./pages/InformationSharingScreen/Informati
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import HighCardPointsScreen from "./pages/HighCardPointsScreen/HighCardPointsScreen";
 import FirstInformationSharedScreen from "./pages/FirstInformationSharedScreen/FirstInformationSharedScreen";
+import CardDistributionScreen from "./pages/CardDistributionScreen/CardDistributionScreen";
+import { BiddingProvider } from "./BiddingContext";
 
 const theme = createTheme({
   palette: {
