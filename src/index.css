@@ -4,10 +4,24 @@
     --red: red;
   }
 
-/* doesn't work */
-  html, body, #app, #app>div {
-    height: 100%
-  }
+  @font-face {
+    font-family: "Rubik";
+    src: local("Rubik"),
+     url("./fonts/Rubik-VariableFont_wght.ttf") format("truetype");
+    /* font-weight: bold; */
+   }
 
-  [data-reactroot] 
-        {height: 100% !important; }
+   @font-face {
+    font-family: "Poppins";
+    src: local("Poppins"),
+     url("./fonts/Poppins-SemiBold.ttf") format("truetype");
+    /* font-weight: bold; */
+   }
+
+   @font-face {
+    font-family: "Poppins-Light";
+    src: local("Poppins-Light"),
+     url("./fonts/Poppins-Light.ttf") format("truetype");
+    /* font-weight: bold; */
+   }
+   

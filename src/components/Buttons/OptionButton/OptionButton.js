@@ -1,11 +1,19 @@
 import React from "react";
-import { StyledOptionButton } from "./OptionButton.styles";
+import {
+  StyledContent,
+  StyledDiv,
+  StyledHeading,
+  StyledOptionButton,
+} from "./OptionButton.styles";
 
-const OptionButton = ({ children, ...props }) => {
+const OptionButton = ({ heading, children, ...props }) => {
   return (
     <>
       <StyledOptionButton color="primary" variant="outlined" {...props}>
-        {children}
+        <StyledDiv>
+          <StyledHeading>{heading}</StyledHeading>
+          <StyledContent>{children}</StyledContent>
+        </StyledDiv>
       </StyledOptionButton>
     </>
   );
