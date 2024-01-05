@@ -1,20 +1,16 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import React from "react";
-import { StyledInputLabel, StyledSelect } from "./Dropdown.styles";
+import { StyledSelect } from "./Dropdown.styles";
 
-const Dropdown = ({ children, handleChange, value, ...props }) => {
-  const HCPValues = [];
-  for (let i = 0; i <= 37; i++) {
-    HCPValues.push(i);
-  }
-
+const Dropdown = ({ label, values, handleChange, value, ...props }) => {
   return (
     <>
       <FormControl
         color="primary"
+        fullWidth
         sx={{
           m: 1,
-          minWidth: 200,
+          minWidth: 100,
           //the followig code doesn't really work, need to find another way to style the border of the dropdown
           "& .MuiOutlinedInput-notchedOutline": {
             borderWidth: "3px",
@@ -27,48 +23,32 @@ const Dropdown = ({ children, handleChange, value, ...props }) => {
           },
         }}
       >
-        <StyledInputLabel id="high-card-points-label">
-          High Card Points
-        </StyledInputLabel>
-        <StyledSelect
-          labelId="high-card-points-label"
-          id="high-card-points-select"
+        <InputLabel id="high-card-points-label">{label}</InputLabel>
+        <Select
           value={value}
-          label="High Card Points"
+          label={label}
           onChange={(e) => handleChange(e)}
+          defaultValue={values[0]}
           MenuProps={{
-            anchorOrigin: {
-              vertical: "bottom",
-              horizontal: "left",
-            },
-            transformOrigin: {
-              vertical: "top",
-              horizontal: "left",
-            },
-            getContentAnchorEl: null,
+            // anchorOrigin: {
+            //   vertical: "bottom",
+            //   horizontal: "left",
+            // },
+            // transformOrigin: {
+            //   vertical: "top",
+            //   horizontal: "left",
+            // },
+            // getContentAnchorEl: null,
             PaperProps: { style: { maxHeight: "260px" } },
           }}
-          // color="secondary"
-          // sx={{
-          //   width: 250,
-          //   height: 50,
-          //   color: "secondary",
-          // }}
         >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-          {HCPValues.map((item) => (
-            <MenuItem value={item}>{item}</MenuItem>
+          {values.map((item, index) => (
+            <MenuItem value={item} key={index}>
+              {item}
+            </MenuItem>
           ))}
-        </StyledSelect>
+        </Select>
       </FormControl>
-      {/* <StyledDiv class="custom-select" style={{ width: "200px" }}>
-        <StyledSelect>
-          <StyledOption value="1">Option 1</StyledOption>
-          <StyledOption value="2">Option 2</StyledOption>
-        </StyledSelect>
-      </StyledDiv> */}
     </>
   );
 };

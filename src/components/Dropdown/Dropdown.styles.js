@@ -7,8 +7,6 @@ export const StyledFormControl = styled(FormControl)`
   // width: 250px;
 `;
 
-export const StyledInputLabel = styled(InputLabel)``;
-
 // export const StyledDiv = styled.div``;
 
 // export const StyledSelect = styled.select`

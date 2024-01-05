@@ -35,10 +35,8 @@ function biddingReducer(bidding, action) {
   }
 }
 
-const initialBid = [{ id: 0, typeOfInformation: "", details: "" }];
-
 export const BiddingProvider = ({ children }) => {
-  const [bidding, dispatch] = useReducer(biddingReducer, initialBid);
+  const [bidding, dispatch] = useReducer(biddingReducer, "");
 
   return (
     <BiddingContext.Provider value={bidding}>

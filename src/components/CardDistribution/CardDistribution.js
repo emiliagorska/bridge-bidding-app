@@ -5,8 +5,19 @@ import {
   StyledDiv,
   StyledTextField,
 } from "./CardDistribution.style";
+import { useBiddingDispatch } from "../../BiddingContext";
+import { useNavigate } from "react-router-dom";
 
-const CardDistribution = ({ children, handleError, ...props }) => {
+const CardDistribution = ({
+  children,
+  handleError,
+  handleDistributionChange,
+  ...props
+}) => {
+  const navigate = useNavigate();
+
+  const dispatchBids = useBiddingDispatch();
+
   const [numbersArray, setNumbersArray] = useState([0, 0, 0, 0]);
   const [error, setError] = useState(true);
 
@@ -19,14 +30,14 @@ const CardDistribution = ({ children, handleError, ...props }) => {
       return setError(true);
     }
     for (let i = 1; i < 4; i++) {
-      if (numbersArray[i] > numbersArray[i - 1]) {
-        console.log("ERROR TRUE::::", numbersArray);
+      if (numbersArray[i] > numbersArray[i - 1] || numbersArray[i] < 0) {
         handleError(true);
         return setError(true);
+      } else {
+        handleError(false);
+        setError(false);
+        handleDistributionChange(numbersArray);
       }
-      handleError(false);
-      setError(false);
-      console.log("Error false:::", numbersArray);
     }
   }, [numbersArray]);
 

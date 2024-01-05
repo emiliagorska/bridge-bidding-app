@@ -3,34 +3,35 @@ import ActionButton from "../../components/Buttons/ActionButton/ActionButton";
 import CardDistribution from "../../components/CardDistribution/CardDistribution";
 import HeadingWithSubheading from "../../components/Headings/HeadingWithSubheading/HeadingWithSubheading";
 import ErrorContainer from "../../components/ErrorContainer/ErrorContainer";
-import {
-  BiddingContext,
-  BiddingDispatchContext,
-  useBidding,
-  useBiddingDispatch,
-} from "../../BiddingContext";
+import { useBidding, useBiddingDispatch } from "../../BiddingContext";
+import { useNavigate } from "react-router-dom";
 
 const CardDistributionScreen = () => {
+  const navigate = useNavigate();
   const [error, setError] = useState();
-  const bidding = useBidding();
-  const dispatch = useBiddingDispatch();
-  //IN SUBMIT:
-  //  dispatch({
-  //   type: 'added',
-  //   id: nextId++,
-  //   text: text,
-  // });
+  const [cardDistribution, setCardDistribution] = useState();
 
-  const handleOnClick = () => {
-    dispatch({
-      type: "added",
-      id: "id",
-      information: "Dispatch works!!",
-      details: "Details",
-    });
+  const bids = useBidding();
+  const dispatchBids = useBiddingDispatch();
+
+  const handleDistributionChange = (distribution) => {
+    setCardDistribution(distribution);
   };
 
-  console.log(bidding);
+  const actionObject = {
+    type: "added",
+    typeOfInformation: "Card Distribution",
+    details: cardDistribution,
+  };
+  const onSubmit = () => {
+    if (bids.length === 0) {
+      dispatchBids(actionObject);
+      navigate("/first-info-shared");
+    } else {
+      dispatchBids(actionObject);
+      navigate("/both-info-shared");
+    }
+  };
 
   const errorMessage =
     "Please make sure you entered the numbers in descending order and that their sum is 13 (the number of all the cards you should have)!";
@@ -44,9 +45,14 @@ const CardDistributionScreen = () => {
         Count how many cards you have in each of the 4 colours. Type the
         numbers, starting from the highest and ending with the lowest.
       </HeadingWithSubheading>
-      <CardDistribution handleError={setError} />
+      <CardDistribution
+        handleError={setError}
+        handleDistributionChange={(distribution) =>
+          handleDistributionChange(distribution)
+        }
+      />
       {error && <ErrorContainer>{errorMessage}</ErrorContainer>}
-      <ActionButton disabled={error} marginTop="8px" onClick={handleOnClick}>
+      <ActionButton disabled={error} marginTop="8px" onClick={onSubmit}>
         Confirm
       </ActionButton>
     </>

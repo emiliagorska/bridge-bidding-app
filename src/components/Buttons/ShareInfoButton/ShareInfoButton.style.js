@@ -15,7 +15,7 @@ export const StyledButton = styled.button`
 `;
 
 export const StyledContentBox = styled.div`
-  color: #2b3031;
+  color: ${(props) => (props.disabled ? "#A8A8A8" : "#2b3031")};
   font-size: 20px;
   font-family: "Rubik";
   font-weight: 500;

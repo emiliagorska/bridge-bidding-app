@@ -7,12 +7,9 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import HighCardPointsScreen from "./pages/HighCardPointsScreen/HighCardPointsScreen";
 import FirstInformationSharedScreen from "./pages/FirstInformationSharedScreen/FirstInformationSharedScreen";
 import CardDistributionScreen from "./pages/CardDistributionScreen/CardDistributionScreen";
-import { createContext, useReducer } from "react";
-import {
-  BiddingContext,
-  BiddingDispatchContext,
-  BiddingProvider,
-} from "./BiddingContext";
+import { BiddingProvider } from "./BiddingContext";
+import NumberOfCardsScreen from "./pages/NumberOfCardsScreen/NumberOfCardsScreen";
+import BothInformationSharedScreen from "./pages/BothInformationSharedScreen/BothInformationSharedScreen";
 
 const theme = createTheme({
   palette: {
@@ -53,8 +50,16 @@ function App() {
                   element={<CardDistributionScreen />}
                 />
                 <Route
+                  path="/number-of-cards"
+                  element={<NumberOfCardsScreen />}
+                />
+                <Route
                   path="/first-info-shared"
                   element={<FirstInformationSharedScreen />}
+                />
+                <Route
+                  path="/both-info-shared"
+                  element={<BothInformationSharedScreen />}
                 />
               </Routes>
             </PageWrapper>
