@@ -5,6 +5,7 @@ import HeadingWithSubheading from "../../components/Headings/HeadingWithSubheadi
 import ErrorContainer from "../../components/ErrorContainer/ErrorContainer";
 import { useBidding, useBiddingDispatch } from "../../BiddingContext";
 import { useNavigate } from "react-router-dom";
+import FooterWrapper from "../../components/FooterWrapper/FooterWrapper";
 
 const CardDistributionScreen = () => {
   const navigate = useNavigate();
@@ -51,10 +52,12 @@ const CardDistributionScreen = () => {
           handleDistributionChange(distribution)
         }
       />
-      {error && <ErrorContainer>{errorMessage}</ErrorContainer>}
-      <ActionButton disabled={error} marginTop="8px" onClick={onSubmit}>
-        Confirm
-      </ActionButton>
+      <FooterWrapper>
+        {error && <ErrorContainer>{errorMessage}</ErrorContainer>}
+        <ActionButton disabled={error} marginTop="8px" onClick={onSubmit}>
+          Confirm
+        </ActionButton>
+      </FooterWrapper>
     </>
   );
 };

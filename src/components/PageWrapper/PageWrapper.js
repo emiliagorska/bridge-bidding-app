@@ -1,15 +1,16 @@
 import React from "react";
-import "./PageWrapper.css";
+import "./PageWrapper.styles.js";
 import Title from "../../components/Title/Title";
+import { ComponentsContainer, PageContainer } from "./PageWrapper.styles.js";
 
 const PageWrapper = ({ children }) => {
   return (
-    <div className="pageContainer">
-      <div className="componentsContainer">
+    <PageContainer>
+      <ComponentsContainer>
         <Title marginTop="8px">Bidding stage</Title>
         {children}
-      </div>
-    </div>
+      </ComponentsContainer>
+    </PageContainer>
   );
 };
 

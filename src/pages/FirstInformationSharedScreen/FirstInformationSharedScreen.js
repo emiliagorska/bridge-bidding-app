@@ -3,6 +3,7 @@ import ShareInfoButton from "../../components/Buttons/ShareInfoButton/ShareInfoB
 import ActionButton from "../../components/Buttons/ActionButton/ActionButton";
 import { useBidding } from "../../BiddingContext";
 import { useNavigate } from "react-router-dom";
+import FooterWrapper from "../../components/FooterWrapper/FooterWrapper";
 
 const FirstInformationSharedScreen = () => {
   const navigate = useNavigate();
@@ -18,8 +19,10 @@ const FirstInformationSharedScreen = () => {
       >
         Share Information
       </ShareInfoButton>
-      <ActionButton marginBottom="8px">Place Bid</ActionButton>
-      <ActionButton>New Game</ActionButton>
+      <FooterWrapper>
+        <ActionButton marginBottom="8px">Place Bid</ActionButton>
+        <ActionButton>New Game</ActionButton>
+      </FooterWrapper>
     </>
   );
 };

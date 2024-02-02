@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import Heading from "../../components/Headings/Heading/Heading";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import ActionButton from "../../components/Buttons/ActionButton/ActionButton";
 import HeadingWithSubheading from "../../components/Headings/HeadingWithSubheading/HeadingWithSubheading";
 import { useBidding, useBiddingDispatch } from "../../BiddingContext";
 import { useNavigate } from "react-router-dom";
-import { DropdownsContainer, StyledDiv } from "./NumberOfCardsScreen.style";
+import { DropdownsContainer } from "./NumberOfCardsScreen.style";
+import FooterWrapper from "../../components/FooterWrapper/FooterWrapper";
 
 const NumberOfCardsScreen = () => {
-  const [numberOfCards, setNumberOfCards] = useState("");
+  const [numberOfCards, setNumberOfCards] = useState("0");
   const [colour, setColour] = useState(String.fromCharCode(0x2660));
   const navigate = useNavigate();
 
@@ -21,6 +21,7 @@ const NumberOfCardsScreen = () => {
     String.fromCharCode(0x2666),
     String.fromCharCode(0x2663),
   ];
+
   const numbersForDropdown = [];
   for (let i = 0; i <= 13; i++) {
     numbersForDropdown.push(i);
@@ -48,7 +49,7 @@ const NumberOfCardsScreen = () => {
     }
   };
   return (
-    <StyledDiv>
+    <>
       <HeadingWithSubheading
         heading="Number of cards in a chosen colour:"
         marginTop="20px"
@@ -69,10 +70,12 @@ const NumberOfCardsScreen = () => {
           handleChange={handleNumberChange}
         ></Dropdown>
       </DropdownsContainer>
-      <ActionButton marginTop="150px" onClick={onSubmit}>
-        <b>Confirm</b>
-      </ActionButton>
-    </StyledDiv>
+      <FooterWrapper>
+        <ActionButton marginTop="150px" onClick={onSubmit}>
+          <b>Confirm</b>
+        </ActionButton>
+      </FooterWrapper>
+    </>
   );
 };
 

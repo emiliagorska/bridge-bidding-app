@@ -9,7 +9,7 @@ import {
 const ShareInfoButton = ({ children, dontShowPlusIcon, ...props }) => {
   return (
     <>
-      <StyledButton variant="outlined" color="primary" {...props}>
+      <StyledButton {...props}>
         <StyledContentBox {...props}>
           {children}
           {!dontShowPlusIcon && <AddCircleIcon color="primary" />}

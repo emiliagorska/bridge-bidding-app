@@ -2,8 +2,6 @@ import styled from "@emotion/styled";
 import { Button } from "@mui/material";
 
 export const StyledButton = styled.button`
-  top: 570px;
-  left: 24px;
   width: 100%;
   height: 64px;
   padding: 0px 8px;

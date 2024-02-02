@@ -4,6 +4,7 @@ import OptionButton from "../../components/Buttons/OptionButton/OptionButton";
 import ActionButton from "../../components/Buttons/ActionButton/ActionButton";
 import { useNavigate } from "react-router-dom";
 import { useBidding } from "../../BiddingContext";
+import FooterWrapper from "../../components/FooterWrapper/FooterWrapper";
 
 const InformationSharingScreen = () => {
   const navigate = useNavigate();
@@ -41,7 +42,9 @@ const InformationSharingScreen = () => {
       >
         How many cards you have in a single color
       </OptionButton>
-      <ActionButton marginTop="16px">Confirm</ActionButton>
+      <FooterWrapper>
+        <ActionButton marginTop="16px">Confirm</ActionButton>
+      </FooterWrapper>
     </>
   );
 };

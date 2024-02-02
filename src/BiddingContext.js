@@ -16,6 +16,9 @@ function biddingReducer(bidding, action) {
         },
       ];
     }
+    case "clearedAll": {
+      return [];
+    }
     //Possibly not needed?
     // case "changed": {
     //   return bidding.map((b) => {

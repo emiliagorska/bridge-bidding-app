@@ -14,10 +14,6 @@ const CardDistribution = ({
   handleDistributionChange,
   ...props
 }) => {
-  const navigate = useNavigate();
-
-  const dispatchBids = useBiddingDispatch();
-
   const [numbersArray, setNumbersArray] = useState([0, 0, 0, 0]);
   const [error, setError] = useState(true);
 

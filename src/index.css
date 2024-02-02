@@ -1,3 +1,9 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 1000px;
+}
+
 :root {
     --gray: rgba(217, 217, 217, 0.50);
     --darkergray: rgba(217, 217, 217);
