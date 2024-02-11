@@ -10,7 +10,7 @@ export const StyledTitle = styled.h1`
   text-align: center;
   margin-bottom: 0;
   // margin-bottom: ${(props) => props.marginBottom && props.marginBottom};
-  margin-top: 0px;
+  margin-top: 15px;
 `;
 
 // export const StyledTitle = styled(Typography)`
