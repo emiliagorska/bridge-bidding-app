@@ -9,13 +9,13 @@ import FooterWrapper from "../../components/FooterWrapper/FooterWrapper";
 
 const NumberOfCardsScreen = () => {
   const [numberOfCards, setNumberOfCards] = useState("0");
-  const [colour, setColour] = useState(String.fromCharCode(0x2660));
+  const [suit, setsuit] = useState(String.fromCharCode(0x2660));
   const navigate = useNavigate();
 
   const bids = useBidding();
   const dispatchBids = useBiddingDispatch();
 
-  const coloursForDropdown = [
+  const suitsForDropdown = [
     String.fromCharCode(0x2660),
     String.fromCharCode(0x2665),
     String.fromCharCode(0x2666),
@@ -27,8 +27,8 @@ const NumberOfCardsScreen = () => {
     numbersForDropdown.push(i);
   }
 
-  const handleColourChange = (e) => {
-    setColour(e.target.value);
+  const handlesuitChange = (e) => {
+    setsuit(e.target.value);
   };
 
   const handleNumberChange = (e) => {
@@ -37,7 +37,7 @@ const NumberOfCardsScreen = () => {
   const actionObject = {
     type: "added",
     typeOfInformation: "Number Of Cards",
-    details: `${numberOfCards} in ${colour}`,
+    details: `${numberOfCards} in ${suit}`,
   };
   const onSubmit = () => {
     if (bids.length === 0) {
@@ -51,18 +51,18 @@ const NumberOfCardsScreen = () => {
   return (
     <>
       <HeadingWithSubheading
-        heading="Number of cards in a chosen colour:"
+        heading="Number of cards in a chosen suit:"
         marginTop="20px"
         marginBottom="16px"
       >
-        Select colour you want to share information on. Then, select how many
-        cards you have in this colour.
+        Select suit you want to share information on. Then, select how many
+        cards you have in this suit.
       </HeadingWithSubheading>
       <DropdownsContainer>
         <Dropdown
-          label="Colour"
-          values={coloursForDropdown}
-          handleChange={handleColourChange}
+          label="suit"
+          values={suitsForDropdown}
+          handleChange={handlesuitChange}
         ></Dropdown>
         <Dropdown
           label="Number of cards"

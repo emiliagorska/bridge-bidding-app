@@ -43,8 +43,8 @@ const CardDistributionScreen = () => {
         marginTop="20px"
         marginBottom="16px"
       >
-        Count how many cards you have in each of the 4 colours. Type the
-        numbers, starting from the highest and ending with the lowest.
+        Count how many cards you have in each of the 4 suits. Type the numbers,
+        starting from the highest and ending with the lowest.
       </HeadingWithSubheading>
       <CardDistribution
         handleError={setError}

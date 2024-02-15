@@ -14,6 +14,11 @@ const BothInformationSharedScreen = () => {
     dispatchBids({ type: "clearedAll" });
     navigate("/");
   };
+
+  const onPlaceBid = () => {
+    navigate("/place-bid/first-screen");
+  };
+
   return (
     <>
       <ShareInfoButton marginTop="32px" marginBottom="16px" dontShowPlusIcon>
@@ -23,7 +28,9 @@ const BothInformationSharedScreen = () => {
         {bids[1].typeOfInformation} - {bids[1].details}
       </ShareInfoButton>
       <FooterWrapper>
-        <ActionButton marginBottom="8px">Place Bid</ActionButton>
+        <ActionButton marginBottom="8px" onClick={onPlaceBid}>
+          Place Bid
+        </ActionButton>
         <ActionButton onClick={onNewGame}>New Game</ActionButton>
       </FooterWrapper>
     </>

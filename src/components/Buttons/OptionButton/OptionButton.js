@@ -9,7 +9,7 @@ import {
 const OptionButton = ({ heading, children, ...props }) => {
   return (
     <>
-      <StyledOptionButton color="primary" variant="outlined" {...props}>
+      <StyledOptionButton {...props}>
         <StyledDiv>
           <StyledHeading>{heading}</StyledHeading>
           <StyledContent>{children}</StyledContent>

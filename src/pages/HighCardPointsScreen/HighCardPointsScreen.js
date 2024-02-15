@@ -45,7 +45,7 @@ const HighCardPointsScreen = () => {
           marginBottom="16px"
         >
           Count how many points you have in your hand (4 for each ace, 3 for
-          each king, 2 for each queen, 1 for each valet)
+          each king, 2 for each queen, 1 for each jack)
         </HeadingWithSubheading>
         <Dropdown
           label="High Card Points"

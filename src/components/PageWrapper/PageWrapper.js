@@ -7,7 +7,7 @@ const PageWrapper = ({ children }) => {
   return (
     <PageContainer>
       <ComponentsContainer>
-        <Title marginTop="8px">Bidding stage</Title>
+        <Title marginTop="8px">Bridge bidding lite</Title>
         {children}
       </ComponentsContainer>
     </PageContainer>

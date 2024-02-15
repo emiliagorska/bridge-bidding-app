@@ -10,6 +10,7 @@ import CardDistributionScreen from "./pages/CardDistributionScreen/CardDistribut
 import { BiddingProvider } from "./BiddingContext";
 import NumberOfCardsScreen from "./pages/NumberOfCardsScreen/NumberOfCardsScreen";
 import BothInformationSharedScreen from "./pages/BothInformationSharedScreen/BothInformationSharedScreen";
+import FirstPlaceBidScreen from "./pages/FirstPlaceBidScreen/FirstPlaceBidScreen";
 
 const theme = createTheme({
   palette: {
@@ -60,6 +61,10 @@ function App() {
                 <Route
                   path="/both-info-shared"
                   element={<BothInformationSharedScreen />}
+                />
+                <Route
+                  path="/place-bid/first-screen"
+                  element={<FirstPlaceBidScreen />}
                 />
               </Routes>
             </PageWrapper>

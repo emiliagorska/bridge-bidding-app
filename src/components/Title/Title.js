@@ -5,7 +5,7 @@ const Title = ({ children, ...props }) => {
   return (
     <>
       <StyledTitle color="ternary" {...props}>
-        Bidding stage
+        {children}
       </StyledTitle>
     </>
   );

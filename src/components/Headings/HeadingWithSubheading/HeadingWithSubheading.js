@@ -10,7 +10,7 @@ const HeadingWithSubheading = ({ children, heading, ...props }) => {
     <>
       <StyledContainer {...props}>
         <StyledHeading {...props}>{heading}</StyledHeading>
-        <StyledSubheading {...props}>{children}</StyledSubheading>
+        {children && <StyledSubheading {...props}>{children}</StyledSubheading>}
       </StyledContainer>
     </>
   );
