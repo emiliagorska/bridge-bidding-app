@@ -5,8 +5,7 @@ import {
   StyledDiv,
   StyledTextField,
 } from "./CardDistribution.style";
-import { useBiddingDispatch } from "../../BiddingContext";
-import { useNavigate } from "react-router-dom";
+
 
 const CardDistribution = ({
   children,

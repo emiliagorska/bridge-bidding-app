@@ -7,10 +7,11 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import HighCardPointsScreen from "./pages/HighCardPointsScreen/HighCardPointsScreen";
 import FirstInformationSharedScreen from "./pages/FirstInformationSharedScreen/FirstInformationSharedScreen";
 import CardDistributionScreen from "./pages/CardDistributionScreen/CardDistributionScreen";
-import { BiddingProvider } from "./BiddingContext";
+import { InformationProvider } from "./InformationContext";
 import NumberOfCardsScreen from "./pages/NumberOfCardsScreen/NumberOfCardsScreen";
 import BothInformationSharedScreen from "./pages/BothInformationSharedScreen/BothInformationSharedScreen";
 import FirstPlaceBidScreen from "./pages/FirstPlaceBidScreen/FirstPlaceBidScreen";
+import { BiddingProvider } from "./BiddingContext";
 
 const theme = createTheme({
   palette: {
@@ -31,47 +32,49 @@ const theme = createTheme({
 
 function App() {
   return (
-    <BiddingProvider>
-      <ThemeProvider theme={theme}>
-        <div className="App">
-          <BrowserRouter>
-            <PageWrapper style={{ height: "100%" }}>
-              <Routes>
-                <Route path="/" element={<WelcomeScreen />} />
-                <Route
-                  path="/info-sharing"
-                  element={<InformationSharingScreen />}
-                />
-                <Route
-                  path="/high-card-points"
-                  element={<HighCardPointsScreen />}
-                />
-                <Route
-                  path="/card-distribution"
-                  element={<CardDistributionScreen />}
-                />
-                <Route
-                  path="/number-of-cards"
-                  element={<NumberOfCardsScreen />}
-                />
-                <Route
-                  path="/first-info-shared"
-                  element={<FirstInformationSharedScreen />}
-                />
-                <Route
-                  path="/both-info-shared"
-                  element={<BothInformationSharedScreen />}
-                />
-                <Route
-                  path="/place-bid/first-screen"
-                  element={<FirstPlaceBidScreen />}
-                />
-              </Routes>
-            </PageWrapper>
-          </BrowserRouter>
-        </div>
-      </ThemeProvider>
-    </BiddingProvider>
+    <InformationProvider>
+      <BiddingProvider>
+        <ThemeProvider theme={theme}>
+          <div className="App">
+            <BrowserRouter>
+              <PageWrapper style={{ height: "100%" }}>
+                <Routes>
+                  <Route path="/" element={<WelcomeScreen />} />
+                  <Route
+                    path="/info-sharing"
+                    element={<InformationSharingScreen />}
+                  />
+                  <Route
+                    path="/high-card-points"
+                    element={<HighCardPointsScreen />}
+                  />
+                  <Route
+                    path="/card-distribution"
+                    element={<CardDistributionScreen />}
+                  />
+                  <Route
+                    path="/number-of-cards"
+                    element={<NumberOfCardsScreen />}
+                  />
+                  <Route
+                    path="/first-info-shared"
+                    element={<FirstInformationSharedScreen />}
+                  />
+                  <Route
+                    path="/both-info-shared"
+                    element={<BothInformationSharedScreen />}
+                  />
+                  <Route
+                    path="/place-bid/first-bid"
+                    element={<FirstPlaceBidScreen />}
+                  />
+                </Routes>
+              </PageWrapper>
+            </BrowserRouter>
+          </div>
+        </ThemeProvider>
+      </BiddingProvider>
+    </InformationProvider>
   );
 }
 

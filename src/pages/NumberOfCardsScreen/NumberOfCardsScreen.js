@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import ActionButton from "../../components/Buttons/ActionButton/ActionButton";
 import HeadingWithSubheading from "../../components/Headings/HeadingWithSubheading/HeadingWithSubheading";
-import { useBidding, useBiddingDispatch } from "../../BiddingContext";
+import { useInformation, useInformationDispatch } from "../../InformationContext";
 import { useNavigate } from "react-router-dom";
 import { DropdownsContainer } from "./NumberOfCardsScreen.style";
 import FooterWrapper from "../../components/FooterWrapper/FooterWrapper";
@@ -12,8 +12,8 @@ const NumberOfCardsScreen = () => {
   const [suit, setsuit] = useState(String.fromCharCode(0x2660));
   const navigate = useNavigate();
 
-  const bids = useBidding();
-  const dispatchBids = useBiddingDispatch();
+  const bids = useInformation();
+  const dispatchInformation = useInformationDispatch();
 
   const suitsForDropdown = [
     String.fromCharCode(0x2660),
@@ -41,10 +41,10 @@ const NumberOfCardsScreen = () => {
   };
   const onSubmit = () => {
     if (bids.length === 0) {
-      dispatchBids(actionObject);
+      dispatchInformation(actionObject);
       navigate("/first-info-shared");
     } else {
-      dispatchBids(actionObject);
+      dispatchInformation(actionObject);
       navigate("/both-info-shared");
     }
   };

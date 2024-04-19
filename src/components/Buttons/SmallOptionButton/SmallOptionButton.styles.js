@@ -4,8 +4,9 @@ export const StyledSmallOptionButton = styled.button`
   top: 98px;
   left: 20px;
   height: 50px;
-  width: 80px;
+  width: auto;
   background-color: #ffffff;
+  box-shadow: 0px 4px 4px rgba(43, 48, 49, 0.1);
   border-radius: 8px;
   border: none;
   box-sizing: border-box;

@@ -3,7 +3,7 @@ import ActionButton from "../../components/Buttons/ActionButton/ActionButton";
 import CardDistribution from "../../components/CardDistribution/CardDistribution";
 import HeadingWithSubheading from "../../components/Headings/HeadingWithSubheading/HeadingWithSubheading";
 import ErrorContainer from "../../components/ErrorContainer/ErrorContainer";
-import { useBidding, useBiddingDispatch } from "../../BiddingContext";
+import { useInformation, useInformationDispatch } from "../../InformationContext";
 import { useNavigate } from "react-router-dom";
 import FooterWrapper from "../../components/FooterWrapper/FooterWrapper";
 
@@ -12,8 +12,8 @@ const CardDistributionScreen = () => {
   const [error, setError] = useState();
   const [cardDistribution, setCardDistribution] = useState();
 
-  const bids = useBidding();
-  const dispatchBids = useBiddingDispatch();
+  const bids = useInformation();
+  const dispatchInformation = useInformationDispatch();
 
   const handleDistributionChange = (distribution) => {
     setCardDistribution(distribution);
@@ -26,10 +26,10 @@ const CardDistributionScreen = () => {
   };
   const onSubmit = () => {
     if (bids.length === 0) {
-      dispatchBids(actionObject);
+      dispatchInformation(actionObject);
       navigate("/first-info-shared");
     } else {
-      dispatchBids(actionObject);
+      dispatchInformation(actionObject);
       navigate("/both-info-shared");
     }
   };

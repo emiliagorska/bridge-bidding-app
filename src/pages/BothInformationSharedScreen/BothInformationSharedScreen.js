@@ -1,22 +1,22 @@
 import React from "react";
 import ShareInfoButton from "../../components/Buttons/ShareInfoButton/ShareInfoButton";
 import ActionButton from "../../components/Buttons/ActionButton/ActionButton";
-import { useBidding, useBiddingDispatch } from "../../BiddingContext";
+import { useInformation, useInformationDispatch } from "../../InformationContext";
 import FooterWrapper from "../../components/FooterWrapper/FooterWrapper";
 import { useNavigate } from "react-router-dom";
 
 const BothInformationSharedScreen = () => {
   const navigate = useNavigate();
-  const bids = useBidding();
-  const dispatchBids = useBiddingDispatch();
+  const bids = useInformation();
+  const dispatchInformation = useInformationDispatch();
 
   const onNewGame = () => {
-    dispatchBids({ type: "clearedAll" });
+    dispatchInformation({ type: "clearedAll" });
     navigate("/");
   };
 
   const onPlaceBid = () => {
-    navigate("/place-bid/first-screen");
+    navigate("/place-bid/first-bid");
   };
 
   return (

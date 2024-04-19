@@ -3,12 +3,12 @@ import Heading from "../../components/Headings/Heading/Heading";
 import OptionButton from "../../components/Buttons/OptionButton/OptionButton";
 import ActionButton from "../../components/Buttons/ActionButton/ActionButton";
 import { useNavigate } from "react-router-dom";
-import { useBidding } from "../../BiddingContext";
+import { useInformation } from "../../InformationContext";
 import FooterWrapper from "../../components/FooterWrapper/FooterWrapper";
 
 const InformationSharingScreen = () => {
   const navigate = useNavigate();
-  const context = useBidding();
+  const context = useInformation();
   console.log("INFORMATION SHARING - CONTEXT:", context[0]?.typeOfInformation);
   return (
     <>

@@ -11,8 +11,7 @@ function biddingReducer(bidding, action) {
         ...bidding,
         {
           id: action.id,
-          typeOfInformation: action.typeOfInformation,
-          details: action.details,
+          bid: action.bid
         },
       ];
     }

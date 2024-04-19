@@ -3,7 +3,7 @@ import Dropdown from "../../components/Dropdown/Dropdown";
 import ActionButton from "../../components/Buttons/ActionButton/ActionButton";
 import { StyledDiv } from "./HighCardPointsScreen.style";
 import HeadingWithSubheading from "../../components/Headings/HeadingWithSubheading/HeadingWithSubheading";
-import { useBidding, useBiddingDispatch } from "../../BiddingContext";
+import { useInformation, useInformationDispatch } from "../../InformationContext";
 import { useNavigate } from "react-router-dom";
 import FooterWrapper from "../../components/FooterWrapper/FooterWrapper";
 
@@ -11,8 +11,8 @@ const HighCardPointsScreen = () => {
   const [highCardPoints, setHighCardPoints] = useState("");
   const navigate = useNavigate();
 
-  const bids = useBidding();
-  const dispatchBids = useBiddingDispatch();
+  const bids = useInformation();
+  const dispatchInformation = useInformationDispatch();
 
   const HCPValues = [];
   for (let i = 0; i <= 37; i++) {
@@ -29,10 +29,10 @@ const HighCardPointsScreen = () => {
   };
   const onSubmit = () => {
     if (bids.length === 0) {
-      dispatchBids(actionObject);
+      dispatchInformation(actionObject);
       navigate("/first-info-shared");
     } else {
-      dispatchBids(actionObject);
+      dispatchInformation(actionObject);
       navigate("/both-info-shared");
     }
   };

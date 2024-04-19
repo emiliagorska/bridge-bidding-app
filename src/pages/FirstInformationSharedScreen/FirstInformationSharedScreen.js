@@ -1,13 +1,13 @@
 import React from "react";
 import ShareInfoButton from "../../components/Buttons/ShareInfoButton/ShareInfoButton";
 import ActionButton from "../../components/Buttons/ActionButton/ActionButton";
-import { useBidding } from "../../BiddingContext";
+import { useInformation } from "../../InformationContext";
 import { useNavigate } from "react-router-dom";
 import FooterWrapper from "../../components/FooterWrapper/FooterWrapper";
 
 const FirstInformationSharedScreen = () => {
   const navigate = useNavigate();
-  const bids = useBidding();
+  const bids = useInformation();
   return (
     <>
       <ShareInfoButton marginTop="32px" marginBottom="16px" dontShowPlusIcon>
