@@ -3,32 +3,28 @@ import styled from "@emotion/styled";
 export const StyledSmallOptionButton = styled.button`
   top: 98px;
   left: 20px;
-  height: 50px;
-  width: auto;
+  height: 56px;
+  width: 100%;
   background-color: #ffffff;
   box-shadow: 0px 4px 4px rgba(43, 48, 49, 0.1);
   border-radius: 8px;
   border: none;
   box-sizing: border-box;
-  &:focus {
-    background-color: #12a582;
-  }
   margin-bottom: ${(props) => props.marginBottom && props.marginBottom};
   margin-top: ${(props) => props.marginTop && props.marginTop};
-`;
-
-export const StyledHeading = styled.h3`
-  color: #2b3031;
-  font-size: 20px;
+  font-size: 18px;
   font-family: "Rubik";
-  font-weight: 500;
   line-height: 26px;
-  margin-bottom: 0px;
-  text-align: left;
+  &:focus {
+    color: ${(props) => props.color};
+    border: ${(props) => `2px solid ${props.color}`};
+  }
 `;
 
 export const StyledContent = styled.p`
-  color: #2b3031;
+&:focus {
+  background-color: ${(props) => props.color};
+}
   font-size: 18px;
   font-family: "Rubik";
   line-height: 26px;

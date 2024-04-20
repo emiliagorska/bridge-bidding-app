@@ -8,7 +8,10 @@ import OptionButton from "../../components/Buttons/OptionButton/OptionButton";
 import SmallOptionButton from "../../components/Buttons/SmallOptionButton/SmallOptionButton";
 import HeadingWithSubheading from "../../components/Headings/HeadingWithSubheading/HeadingWithSubheading";
 import Dropdown from "../../components/Dropdown/Dropdown";
-import { BidButtonsContainer, DropdownsContainer } from "./FirstPlaceBidScreen.style";
+import {
+  BidButtonsContainer,
+  DropdownsContainer,
+} from "./FirstPlaceBidScreen.style";
 import { useBiddingDispatch } from "../../BiddingContext";
 import ShareInfoButton from "../../components/Buttons/ShareInfoButton/ShareInfoButton";
 
@@ -19,8 +22,8 @@ const FirstPlaceBidScreen = () => {
 
   const [numberOfCards, setNumberOfCards] = useState("0");
   const [trump, setTrump] = useState("NT");
-  const [bid, setBid] = useState('');
-  const [displayedBid, setDisplayedBid] = useState('')
+  const [bid, setBid] = useState("");
+  const [displayedBid, setDisplayedBid] = useState("");
 
   const trumpsForDropdown = [
     "NT",
@@ -37,22 +40,22 @@ const FirstPlaceBidScreen = () => {
 
   const actionObject = {
     type: "added",
-    bid: bid
+    bid: bid,
   };
 
   const handleButtonChange = (e) => {
-    console.log("BUTTON CLICKED:", e.currentTarget.value)
-    setBid(e.currentTarget.value)
-  }
+    console.log("BUTTON CLICKED:", e.currentTarget.value);
+    setBid(e.currentTarget.value);
+  };
 
   const handleTrumpChange = (e) => {
     setTrump(e.target.value);
-    setBid(`${numberOfCards} ${e.target.value}`)
+    setBid(`${numberOfCards} ${e.target.value}`);
   };
 
   const handleNumberChange = (e) => {
     setNumberOfCards(e.target.value);
-    setBid(`${e.target.value} ${trump}`)
+    setBid(`${e.target.value} ${trump}`);
   };
 
   const onNewGame = () => {
@@ -62,7 +65,7 @@ const FirstPlaceBidScreen = () => {
 
   const onPlaceBid = () => {
     setDisplayedBid(bid);
-    console.log("BID FROM ONPLACEBID:", bid)
+    console.log("BID FROM ONPLACEBID:", bid);
     dispatchBids(actionObject);
   };
 
@@ -74,9 +77,30 @@ const FirstPlaceBidScreen = () => {
         heading="Select your bid:"
       ></HeadingWithSubheading>
       <BidButtonsContainer>
-      <SmallOptionButton marginBottom="8px" onClick={handleButtonChange} value="PASS">PASS</SmallOptionButton>
-      <SmallOptionButton marginBottom="8px" onClick={handleButtonChange} value="DOUBLE">DOUBLE</SmallOptionButton>
-      <SmallOptionButton marginBottom="8px" onClick={handleButtonChange} value="REDOUBLE">REDOUBLE</SmallOptionButton>
+        <SmallOptionButton
+          marginBottom="8px"
+          onClick={handleButtonChange}
+          value="PASS"
+          color="#12a582"
+        >
+          PASS
+        </SmallOptionButton>
+        <SmallOptionButton
+          marginBottom="8px"
+          onClick={handleButtonChange}
+          value="DOUBLE"
+          color="#ff3b30"
+        >
+          DOUBLE
+        </SmallOptionButton>
+        <SmallOptionButton
+          marginBottom="8px"
+          onClick={handleButtonChange}
+          value="REDOUBLE"
+          color="#3380ef"
+        >
+          REDOUBLE
+        </SmallOptionButton>
       </BidButtonsContainer>
       {/* <Text marginTop="8px" marginBottom="8px">
         OR: Select how many tricks you think you can win:
@@ -88,18 +112,20 @@ const FirstPlaceBidScreen = () => {
           handleChange={handleNumberChange}
         />
         <Dropdown
-          label="trump"
+          label="Trump"
           values={trumpsForDropdown}
           handleChange={handleTrumpChange}
         />
       </DropdownsContainer>
-      <ShareInfoButton marginTop="32px" marginBottom="16px" dontShowPlusIcon>
+      <ShareInfoButton
+        marginTop="32px"
+        marginBottom="16px"
+        dontShowPlusIcon
+        borderStyle="3px solid #12a582"
+      >
         {bid}
       </ShareInfoButton>
       <FooterWrapper>
-        <ActionButton marginBottom="8px" onClick={onPlaceBid}>
-          Next Bid
-        </ActionButton>
         <ActionButton onClick={onNewGame}>New Game</ActionButton>
       </FooterWrapper>
     </>

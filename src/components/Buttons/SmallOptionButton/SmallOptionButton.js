@@ -8,10 +8,7 @@ import {
 const SmallOptionButton = ({ heading, children, ...props }) => {
   return (
     <>
-      <StyledSmallOptionButton color="primary" variant="outlined" {...props}>
-        {heading && <StyledHeading>{heading}</StyledHeading>}
-        <StyledContent>{children}</StyledContent>
-      </StyledSmallOptionButton>
+      <StyledSmallOptionButton {...props}>{children}</StyledSmallOptionButton>
     </>
   );
 };

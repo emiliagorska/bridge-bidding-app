@@ -4,7 +4,6 @@ export const PageContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  // padding-top: 15px;
   padding-left: 15px;
   padding-right: 15px;
 `;

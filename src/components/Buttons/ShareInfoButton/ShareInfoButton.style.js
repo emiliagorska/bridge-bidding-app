@@ -7,7 +7,8 @@ export const StyledButton = styled.button`
   height: 140px;
   background-color: #ffffff;
   border-radius: 8px;
-  border: 1px solid #12a582;
+  border: ${(props) =>
+    props.borderStyle ? props.borderStyle : `1px solid #12a582`};
   box-sizing: border-box;
   margin-bottom: ${(props) => props.marginBottom && props.marginBottom};
   margin-top: ${(props) => props.marginTop && props.marginTop};

@@ -25,6 +25,16 @@ const Dropdown = ({ label, values, handleChange, value, ...props }) => {
       >
         <InputLabel id="high-card-points-label">{label}</InputLabel>
         <Select
+          sx={{
+            backgroundColor: "white",
+            "& .MuiOutlinedInput-notchedOutline": {
+              borderColor: "white",
+            },
+            "&:hover .MuiOutlinedInput-notchedOutline": {
+              borderColor: "#12a582",
+              borderWidth: "2px",
+            },
+          }}
           value={value}
           label={label}
           onChange={(e) => handleChange(e)}
