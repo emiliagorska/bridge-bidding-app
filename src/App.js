@@ -37,7 +37,7 @@ function App() {
         <ThemeProvider theme={theme}>
           <div className="App">
             <BrowserRouter>
-              <PageWrapper style={{ height: "100%" }}>
+              <PageWrapper>
                 <Routes>
                   <Route path="/" element={<WelcomeScreen />} />
                   <Route

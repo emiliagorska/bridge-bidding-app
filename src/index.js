@@ -10,7 +10,7 @@ import "./fonts/Poppins-Light.ttf";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App style={{ height: "100%" }} />
+    <App style={{ height: "100dvh" }} />
   </React.StrictMode>
 );
 
