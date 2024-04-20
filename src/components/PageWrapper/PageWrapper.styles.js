@@ -10,7 +10,7 @@ export const PageContainer = styled.div`
 `;
 
 export const ComponentsContainer = styled.div`
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   width: clamp(0px, 100%, 700px);
