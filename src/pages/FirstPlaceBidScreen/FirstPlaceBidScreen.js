@@ -14,6 +14,7 @@ import {
 } from "./FirstPlaceBidScreen.style";
 import { useBiddingDispatch } from "../../BiddingContext";
 import ShareInfoButton from "../../components/Buttons/ShareInfoButton/ShareInfoButton";
+import PrimaryTextBox from "../../components/PrimaryTextBox/PrimaryTextBox";
 
 const FirstPlaceBidScreen = () => {
   const navigate = useNavigate();
@@ -69,6 +70,16 @@ const FirstPlaceBidScreen = () => {
     dispatchBids(actionObject);
   };
 
+  // const findPrimaryColor = () => {
+  //   if (bid === "PASS") {
+  //     return "#12a582";
+  //   } else if (bid === "DOUBLE") {
+  //     return "#ff3b30";
+  //   } else if (bid === "REDOUBLE") {
+  //     return "#3380ef";
+  //   }
+  // };
+
   return (
     <>
       <HeadingWithSubheading
@@ -117,14 +128,14 @@ const FirstPlaceBidScreen = () => {
           handleChange={handleTrumpChange}
         />
       </DropdownsContainer>
-      <ShareInfoButton
+      <PrimaryTextBox
         marginTop="32px"
         marginBottom="16px"
         dontShowPlusIcon
         borderStyle="3px solid #12a582"
       >
         {bid}
-      </ShareInfoButton>
+      </PrimaryTextBox>
       <FooterWrapper>
         <ActionButton onClick={onNewGame}>New Game</ActionButton>
       </FooterWrapper>
