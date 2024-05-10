@@ -26,14 +26,13 @@ export const StyledSmallOptionButton = styled.button`
 `;
 
 export const StyledContent = styled.p`
-&:focus {
-  background-color: ${(props) => props.color};
-}
+  &:focus {
+    background-color: ${(props) => props.color};
+  }
   font-size: 18px;
   font-family: "Rubik";
   line-height: 26px;
   margin: auto;
-  te
 `;
 
 // export const StyledOptionButton = styled(Button)`

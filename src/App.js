@@ -35,42 +35,47 @@ function App() {
     <InformationProvider>
       <BiddingProvider>
         <ThemeProvider theme={theme}>
-          <div className="App">
-            <BrowserRouter>
-              <PageWrapper>
-                <Routes>
-                  <Route path="/" element={<WelcomeScreen />} />
-                  <Route
-                    path="/info-sharing"
-                    element={<InformationSharingScreen />}
-                  />
-                  <Route
-                    path="/high-card-points"
-                    element={<HighCardPointsScreen />}
-                  />
-                  <Route
-                    path="/card-distribution"
-                    element={<CardDistributionScreen />}
-                  />
-                  <Route
-                    path="/number-of-cards"
-                    element={<NumberOfCardsScreen />}
-                  />
-                  <Route
-                    path="/first-info-shared"
-                    element={<FirstInformationSharedScreen />}
-                  />
-                  <Route
-                    path="/both-info-shared"
-                    element={<BothInformationSharedScreen />}
-                  />
-                  <Route
-                    path="/place-bid/first-bid"
-                    element={<FirstPlaceBidScreen />}
-                  />
-                </Routes>
-              </PageWrapper>
-            </BrowserRouter>
+          <div
+            class="flex w-screen h-screen justify-center items-center"
+            tabindex="0"
+          >
+            <div className="App">
+              <BrowserRouter>
+                <PageWrapper>
+                  <Routes>
+                    <Route path="/" element={<WelcomeScreen />} />
+                    <Route
+                      path="/info-sharing"
+                      element={<InformationSharingScreen />}
+                    />
+                    <Route
+                      path="/high-card-points"
+                      element={<HighCardPointsScreen />}
+                    />
+                    <Route
+                      path="/card-distribution"
+                      element={<CardDistributionScreen />}
+                    />
+                    <Route
+                      path="/number-of-cards"
+                      element={<NumberOfCardsScreen />}
+                    />
+                    <Route
+                      path="/first-info-shared"
+                      element={<FirstInformationSharedScreen />}
+                    />
+                    <Route
+                      path="/both-info-shared"
+                      element={<BothInformationSharedScreen />}
+                    />
+                    <Route
+                      path="/place-bid/first-bid"
+                      element={<FirstPlaceBidScreen />}
+                    />
+                  </Routes>
+                </PageWrapper>
+              </BrowserRouter>
+            </div>
           </div>
         </ThemeProvider>
       </BiddingProvider>

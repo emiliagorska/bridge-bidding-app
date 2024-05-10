@@ -44,11 +44,6 @@ const FirstPlaceBidScreen = () => {
     bid: bid,
   };
 
-  const handleButtonChange = (e) => {
-    console.log("BUTTON CLICKED:", e.currentTarget.value);
-    setBid(e.currentTarget.value);
-  };
-
   const handleTrumpChange = (e) => {
     setTrump(e.target.value);
     setBid(`${numberOfCards} ${e.target.value}`);
@@ -70,15 +65,21 @@ const FirstPlaceBidScreen = () => {
     dispatchBids(actionObject);
   };
 
-  // const findPrimaryColor = () => {
-  //   if (bid === "PASS") {
-  //     return "#12a582";
-  //   } else if (bid === "DOUBLE") {
-  //     return "#ff3b30";
-  //   } else if (bid === "REDOUBLE") {
-  //     return "#3380ef";
-  //   }
-  // };
+  const findPrimaryColor = () => {
+    if (bid === "PASS") {
+      return "#12a582";
+    } else if (bid === "DOUBLE") {
+      return "#ff3b30";
+    } else if (bid === "REDOUBLE") {
+      return "#3380ef";
+    }
+  };
+
+  const handleButtonChange = (e) => {
+    console.log("BUTTON CLICKED:", e.currentTarget.value);
+    e.target.focus();
+    setBid(e.currentTarget.value);
+  };
 
   return (
     <>
