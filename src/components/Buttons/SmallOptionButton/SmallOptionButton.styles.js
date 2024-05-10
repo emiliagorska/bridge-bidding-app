@@ -27,9 +27,6 @@ export const StyledSmallOptionButton = styled.button`
 
 export const StyledContent = styled.p`
   color: black;
-  &:focus {
-    background-color: ${(props) => props.color};
-  }
   font-size: 18px;
   font-family: "Rubik";
   line-height: 26px;
