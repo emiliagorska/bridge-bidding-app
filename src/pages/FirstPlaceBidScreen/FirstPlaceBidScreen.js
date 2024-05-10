@@ -84,7 +84,6 @@ const FirstPlaceBidScreen = () => {
       ></HeadingWithSubheading>
       <BidButtonsContainer>
         <SmallOptionButton
-          tabindex="0"
           marginBottom="8px"
           onClick={handleButtonChange}
           value="PASS"
