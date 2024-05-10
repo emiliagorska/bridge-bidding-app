@@ -8,6 +8,11 @@ export const DropdownsContainer = styled.div`
 export const BidButtonsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  gap: 20px;
+  justify-content: space-between;
+  @media (max-width: 400px) {
+    gap: 3px;
+  }
+  @media (min-width: 400px) {
+    gap: 20px;
+  }
 `;

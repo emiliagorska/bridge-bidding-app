@@ -19,6 +19,10 @@ export const StyledSmallOptionButton = styled.button`
     color: ${(props) => props.color};
     border: ${(props) => `2px solid ${props.color}`};
   }
+  &:focus-visible {
+    color: ${(props) => props.color};
+    border: ${(props) => `2px solid ${props.color}`};
+  }
 `;
 
 export const StyledContent = styled.p`
