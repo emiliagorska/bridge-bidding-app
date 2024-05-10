@@ -13,7 +13,6 @@ import {
   DropdownsContainer,
 } from "./FirstPlaceBidScreen.style";
 import { useBiddingDispatch } from "../../BiddingContext";
-import ShareInfoButton from "../../components/Buttons/ShareInfoButton/ShareInfoButton";
 import PrimaryTextBox from "../../components/PrimaryTextBox/PrimaryTextBox";
 
 const FirstPlaceBidScreen = () => {
@@ -24,9 +23,9 @@ const FirstPlaceBidScreen = () => {
   const [numberOfCards, setNumberOfCards] = useState("0");
   const [trump, setTrump] = useState("NT");
   const [bid, setBid] = useState("");
-  const [displayedBid, setDisplayedBid] = useState("");
 
   const trumpsForDropdown = [
+    //FIND BETTER WAY TO DISPLAY SUITS
     "NT",
     String.fromCharCode(0x2660),
     String.fromCharCode(0x2665),
@@ -44,11 +43,6 @@ const FirstPlaceBidScreen = () => {
     bid: bid,
   };
 
-  const handleButtonChange = (e) => {
-    console.log("BUTTON CLICKED:", e.currentTarget.value);
-    setBid(e.currentTarget.value);
-  };
-
   const handleTrumpChange = (e) => {
     setTrump(e.target.value);
     setBid(`${numberOfCards} ${e.target.value}`);
@@ -64,21 +58,22 @@ const FirstPlaceBidScreen = () => {
     navigate("/");
   };
 
-  const onPlaceBid = () => {
-    setDisplayedBid(bid);
-    console.log("BID FROM ONPLACEBID:", bid);
-    dispatchBids(actionObject);
+  //FIGURE THIS OUT
+  const findPrimaryColor = () => {
+    if (bid === "PASS") {
+      return "#12a582";
+    } else if (bid === "DOUBLE") {
+      return "#ff3b30";
+    } else if (bid === "REDOUBLE") {
+      return "#3380ef";
+    }
   };
 
-  // const findPrimaryColor = () => {
-  //   if (bid === "PASS") {
-  //     return "#12a582";
-  //   } else if (bid === "DOUBLE") {
-  //     return "#ff3b30";
-  //   } else if (bid === "REDOUBLE") {
-  //     return "#3380ef";
-  //   }
-  // };
+  const handleButtonChange = (e) => {
+    console.log("BUTTON CLICKED:", e.currentTarget.value);
+    e.target.focus();
+    setBid(e.currentTarget.value);
+  };
 
   return (
     <>

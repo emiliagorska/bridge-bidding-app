@@ -1,9 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 import ActionButton from "../../components/Buttons/ActionButton/ActionButton";
 import CardDistribution from "../../components/CardDistribution/CardDistribution";
 import HeadingWithSubheading from "../../components/Headings/HeadingWithSubheading/HeadingWithSubheading";
 import ErrorContainer from "../../components/ErrorContainer/ErrorContainer";
-import { useInformation, useInformationDispatch } from "../../InformationContext";
+import {
+  useInformation,
+  useInformationDispatch,
+} from "../../InformationContext";
 import { useNavigate } from "react-router-dom";
 import FooterWrapper from "../../components/FooterWrapper/FooterWrapper";
 

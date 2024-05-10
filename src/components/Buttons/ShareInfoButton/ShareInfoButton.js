@@ -6,13 +6,13 @@ import {
   StyledParagraph,
 } from "./ShareInfoButton.style";
 
-const ShareInfoButton = ({ children, dontShowPlusIcon, ...props }) => {
+const ShareInfoButton = ({ children, showPlusIcon, ...props }) => {
   return (
     <>
       <StyledButton {...props}>
         <StyledContentBox {...props}>
           {children}
-          {!dontShowPlusIcon && <AddCircleIcon color="primary" />}
+          {showPlusIcon && <AddCircleIcon color="primary" />}
         </StyledContentBox>
       </StyledButton>
     </>

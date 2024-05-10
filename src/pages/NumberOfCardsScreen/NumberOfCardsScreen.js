@@ -16,6 +16,7 @@ const NumberOfCardsScreen = () => {
   const dispatchInformation = useInformationDispatch();
 
   const suitsForDropdown = [
+    //research how to make these icons prettier
     String.fromCharCode(0x2660),
     String.fromCharCode(0x2665),
     String.fromCharCode(0x2666),
@@ -71,8 +72,8 @@ const NumberOfCardsScreen = () => {
         ></Dropdown>
       </DropdownsContainer>
       <FooterWrapper>
-        <ActionButton marginTop="150px" onClick={onSubmit}>
-          <b>Confirm</b>
+        <ActionButton onClick={onSubmit}>
+          Confirm
         </ActionButton>
       </FooterWrapper>
     </>

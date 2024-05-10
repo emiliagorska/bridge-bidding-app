@@ -12,10 +12,11 @@ const WelcomeScreen = () => {
         marginTop="48px"
         marginBottom="16px"
         onClick={() => navigate("/info-sharing")}
+        showPlusIcon
       >
         Share Information
       </ShareInfoButton>
-      <ShareInfoButton marginBottom="32px" disabled>
+      <ShareInfoButton marginBottom="32px" showPlusIcon disabled>
         Share Information
       </ShareInfoButton>
       <FooterWrapper>

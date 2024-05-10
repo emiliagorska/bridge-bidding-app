@@ -1,6 +1,5 @@
 import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import React from "react";
-import { StyledSelect } from "./Dropdown.styles";
 
 const Dropdown = ({ label, values, handleChange, value, ...props }) => {
   return (
@@ -11,7 +10,6 @@ const Dropdown = ({ label, values, handleChange, value, ...props }) => {
         sx={{
           m: 1,
           minWidth: 100,
-          //the followig code doesn't really work, need to find another way to style the border of the dropdown
           "& .MuiOutlinedInput-notchedOutline": {
             borderWidth: "3px",
           },
@@ -23,7 +21,7 @@ const Dropdown = ({ label, values, handleChange, value, ...props }) => {
           },
         }}
       >
-        <InputLabel id="high-card-points-label">{label}</InputLabel>
+        <InputLabel>{label}</InputLabel>
         <Select
           sx={{
             backgroundColor: "white",
@@ -40,15 +38,6 @@ const Dropdown = ({ label, values, handleChange, value, ...props }) => {
           onChange={(e) => handleChange(e)}
           defaultValue={values[0]}
           MenuProps={{
-            // anchorOrigin: {
-            //   vertical: "bottom",
-            //   horizontal: "left",
-            // },
-            // transformOrigin: {
-            //   vertical: "top",
-            //   horizontal: "left",
-            // },
-            // getContentAnchorEl: null,
             PaperProps: { style: { maxHeight: "260px" } },
           }}
         >

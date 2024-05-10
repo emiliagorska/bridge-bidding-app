@@ -14,4 +14,8 @@ export const StyledTextField = styled.input`
   background-color: #ffffff;
   border-radius: 8px;
   border: none;
+  font-size: 16px;
+  font-family: "Poppins-Light";
+  color: #2b3031;
+  text-align: center;
 `;
