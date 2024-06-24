@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import FooterWrapper from "../../components/FooterWrapper/FooterWrapper";
 
 const HighCardPointsScreen = () => {
-  const [highCardPoints, setHighCardPoints] = useState("");
+  const [highCardPoints, setHighCardPoints] = useState(0);
   const navigate = useNavigate();
 
   const bids = useInformation();
@@ -54,8 +54,8 @@ const HighCardPointsScreen = () => {
         ></Dropdown>
       </StyledDiv>
       <FooterWrapper>
-        <ActionButton marginTop="150px" onClick={onSubmit}>
-          <b>Confirm</b>
+        <ActionButton onClick={onSubmit}>
+          Confirm
         </ActionButton>
       </FooterWrapper>
     </>

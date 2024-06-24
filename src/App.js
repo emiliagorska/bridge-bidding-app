@@ -36,7 +36,8 @@ function App() {
       <BiddingProvider>
         <ThemeProvider theme={theme}>
           <div
-            class="flex w-screen h-screen justify-center items-center"
+          //CHECK WHETHER THIS IS NEEDED
+            // class="flex w-screen h-screen justify-center items-center"
             tabindex="0"
           >
             <div className="App">

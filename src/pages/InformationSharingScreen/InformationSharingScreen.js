@@ -9,7 +9,6 @@ import FooterWrapper from "../../components/FooterWrapper/FooterWrapper";
 const InformationSharingScreen = () => {
   const navigate = useNavigate();
   const context = useInformation();
-  console.log("INFORMATION SHARING - CONTEXT:", context[0]?.typeOfInformation);
   return (
     <>
       <Heading marginTop="8px" marginBottom="8px">

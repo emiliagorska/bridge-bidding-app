@@ -10,12 +10,13 @@ const FirstInformationSharedScreen = () => {
   const bids = useInformation();
   return (
     <>
-      <ShareInfoButton marginTop="32px" marginBottom="16px" dontShowPlusIcon>
+      <ShareInfoButton marginTop="32px" marginBottom="16px">
         {bids[0].typeOfInformation} - {bids[0].details}
       </ShareInfoButton>
       <ShareInfoButton
         marginBottom="32px"
         onClick={() => navigate("/info-sharing")}
+        showPlusIcon
       >
         Share Information
       </ShareInfoButton>

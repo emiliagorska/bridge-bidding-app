@@ -21,10 +21,10 @@ const BothInformationSharedScreen = () => {
 
   return (
     <>
-      <ShareInfoButton marginTop="32px" marginBottom="16px" dontShowPlusIcon>
+      <ShareInfoButton marginTop="32px" marginBottom="16px">
         {bids[0].typeOfInformation} - {bids[0].details}
       </ShareInfoButton>
-      <ShareInfoButton marginBottom="32px" dontShowPlusIcon>
+      <ShareInfoButton marginBottom="32px">
         {bids[1].typeOfInformation} - {bids[1].details}
       </ShareInfoButton>
       <FooterWrapper>

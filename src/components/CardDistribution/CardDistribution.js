@@ -1,36 +1,27 @@
 import React, { useEffect, useState } from "react";
 import {
-  ErrorContainer,
-  ErrorMessage,
   StyledDiv,
   StyledTextField,
 } from "./CardDistribution.style";
 
-
 const CardDistribution = ({
-  children,
   handleError,
   handleDistributionChange,
-  ...props
 }) => {
   const [numbersArray, setNumbersArray] = useState([0, 0, 0, 0]);
-  const [error, setError] = useState(true);
 
   useEffect(() => {
     var sumOfNumbers = numbersArray.reduce(function (a, b) {
       return parseInt(a) + parseInt(b);
     });
     if (sumOfNumbers !== 13) {
-      handleError(true);
-      return setError(true);
+      return handleError(true);
     }
     for (let i = 1; i < 4; i++) {
       if (numbersArray[i] > numbersArray[i - 1] || numbersArray[i] < 0) {
-        handleError(true);
-        return setError(true);
+        return handleError(true);
       } else {
         handleError(false);
-        setError(false);
         handleDistributionChange(numbersArray);
       }
     }

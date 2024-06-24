@@ -13,7 +13,6 @@ import {
   DropdownsContainer,
 } from "./FirstPlaceBidScreen.style";
 import { useBiddingDispatch } from "../../BiddingContext";
-import ShareInfoButton from "../../components/Buttons/ShareInfoButton/ShareInfoButton";
 import PrimaryTextBox from "../../components/PrimaryTextBox/PrimaryTextBox";
 
 const FirstPlaceBidScreen = () => {
@@ -24,9 +23,9 @@ const FirstPlaceBidScreen = () => {
   const [numberOfCards, setNumberOfCards] = useState("0");
   const [trump, setTrump] = useState("NT");
   const [bid, setBid] = useState("");
-  const [displayedBid, setDisplayedBid] = useState("");
 
   const trumpsForDropdown = [
+    //FIND BETTER WAY TO DISPLAY SUITS
     "NT",
     String.fromCharCode(0x2660),
     String.fromCharCode(0x2665),
@@ -59,12 +58,7 @@ const FirstPlaceBidScreen = () => {
     navigate("/");
   };
 
-  const onPlaceBid = () => {
-    setDisplayedBid(bid);
-    console.log("BID FROM ONPLACEBID:", bid);
-    dispatchBids(actionObject);
-  };
-
+  //FIGURE THIS OUT
   const findPrimaryColor = () => {
     if (bid === "PASS") {
       return "#12a582";
