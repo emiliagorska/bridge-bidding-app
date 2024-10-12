@@ -1,49 +1,20 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-// @ts-expect-error TS(6142): Module './components/PageWrapper/PageWrapper' was ... Remove this comment to see the full error message
 import PageWrapper from "./components/PageWrapper/PageWrapper";
-// @ts-expect-error TS(6142): Module './pages/WelcomeScreen/WelcomeScreen' was r... Remove this comment to see the full error message
 import WelcomeScreen from "./pages/WelcomeScreen/WelcomeScreen";
-// @ts-expect-error TS(6142): Module './pages/InformationSharingScreen/Informati... Remove this comment to see the full error message
 import InformationSharingScreen from "./pages/InformationSharingScreen/InformationSharingScreen";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-// @ts-expect-error TS(6142): Module './pages/HighCardPointsScreen/HighCardPoint... Remove this comment to see the full error message
 import HighCardPointsScreen from "./pages/HighCardPointsScreen/HighCardPointsScreen";
-// @ts-expect-error TS(6142): Module './pages/FirstInformationSharedScreen/First... Remove this comment to see the full error message
 import FirstInformationSharedScreen from "./pages/FirstInformationSharedScreen/FirstInformationSharedScreen";
-// @ts-expect-error TS(6142): Module './pages/CardDistributionScreen/CardDistrib... Remove this comment to see the full error message
 import CardDistributionScreen from "./pages/CardDistributionScreen/CardDistributionScreen";
-// @ts-expect-error TS(6142): Module './InformationContext' was resolved to '/Us... Remove this comment to see the full error message
 import { InformationProvider } from "./InformationContext";
-// @ts-expect-error TS(6142): Module './pages/NumberOfCardsScreen/NumberOfCardsS... Remove this comment to see the full error message
 import NumberOfCardsScreen from "./pages/NumberOfCardsScreen/NumberOfCardsScreen";
-// @ts-expect-error TS(6142): Module './pages/BothInformationSharedScreen/BothIn... Remove this comment to see the full error message
 import BothInformationSharedScreen from "./pages/BothInformationSharedScreen/BothInformationSharedScreen";
-// @ts-expect-error TS(6142): Module './pages/FirstPlaceBidScreen/FirstPlaceBidS... Remove this comment to see the full error message
 import FirstPlaceBidScreen from "./pages/FirstPlaceBidScreen/FirstPlaceBidScreen";
-// @ts-expect-error TS(6142): Module './BiddingContext' was resolved to '/Users/... Remove this comment to see the full error message
 import { BiddingProvider } from "./BiddingContext";
-// @ts-expect-error TS(6142): Module './components/MobileOnlyInformationPanel/Mo... Remove this comment to see the full error message
 import MobileOnlyInformationPanel from "./components/MobileOnlyInformationPanel/MobileOnlyInformationPanel";
 import { useEffect, useState } from "react";
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "rgba(18, 165, 130)",
-    },
-    secondary: {
-      main: "rgba(217, 217, 217)",
-    },
-    // @ts-expect-error TS(2322): Type '{ primary: { main: string; }; secondary: { m... Remove this comment to see the full error message
-    ternary: {
-      main: "rgba(63, 62, 62, 1)",
-    },
-    error: {
-      main: "#ffbeba",
-    },
-  },
-});
 
 function App() {
   const [isMobile, setIsMobile] = useState(

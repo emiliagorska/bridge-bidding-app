@@ -1,6 +1,5 @@
 import React from "react";
-import "./PageWrapper.styles.js";
-import { ComponentsContainer, PageContainer, Title } from "./PageWrapper.styles.js";
+import { ComponentsContainer, PageContainer, Title } from "./PageWrapper.style";
 
 const PageWrapper = ({
   children

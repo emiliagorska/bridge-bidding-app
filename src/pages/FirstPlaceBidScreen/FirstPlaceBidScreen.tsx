@@ -1,28 +1,18 @@
 import React, { useState } from "react";
-// @ts-expect-error TS(6142): Module '../../components/Buttons/ActionButton/Acti... Remove this comment to see the full error message
 import ActionButton from "../../components/Buttons/ActionButton/ActionButton";
-// @ts-expect-error TS(6142): Module '../../InformationContext' was resolved to ... Remove this comment to see the full error message
 import { useInformation } from "../../InformationContext";
-// @ts-expect-error TS(6142): Module '../../components/FooterWrapper/FooterWrapp... Remove this comment to see the full error message
 import FooterWrapper from "../../components/FooterWrapper/FooterWrapper";
 import { useNavigate } from "react-router-dom";
-// @ts-expect-error TS(6142): Module '../../components/Headings/Heading/Heading'... Remove this comment to see the full error message
 import Heading from "../../components/Headings/Heading/Heading";
-// @ts-expect-error TS(6142): Module '../../components/Buttons/OptionButton/Opti... Remove this comment to see the full error message
 import OptionButton from "../../components/Buttons/OptionButton/OptionButton";
-// @ts-expect-error TS(6142): Module '../../components/Buttons/SmallOptionButton... Remove this comment to see the full error message
 import SmallOptionButton from "../../components/Buttons/SmallOptionButton/SmallOptionButton";
-// @ts-expect-error TS(6142): Module '../../components/Headings/HeadingWithSubhe... Remove this comment to see the full error message
 import HeadingWithSubheading from "../../components/Headings/HeadingWithSubheading/HeadingWithSubheading";
-// @ts-expect-error TS(6142): Module '../../components/Dropdown/Dropdown' was re... Remove this comment to see the full error message
 import Dropdown from "../../components/Dropdown/Dropdown";
 import {
   BidButtonsContainer,
   DropdownsContainer,
 } from "./FirstPlaceBidScreen.style";
-// @ts-expect-error TS(6142): Module '../../BiddingContext' was resolved to '/Us... Remove this comment to see the full error message
 import { useBiddingDispatch } from "../../BiddingContext";
-// @ts-expect-error TS(6142): Module '../../components/PrimaryTextBox/PrimaryTex... Remove this comment to see the full error message
 import PrimaryTextBox from "../../components/PrimaryTextBox/PrimaryTextBox";
 
 const FirstPlaceBidScreen = () => {
@@ -47,11 +37,6 @@ const FirstPlaceBidScreen = () => {
   for (let i = 1; i <= 7; i++) {
     numbersForDropdown.push(i);
   }
-
-  const actionObject = {
-    type: "added",
-    bid: bid,
-  };
 
   const handleTrumpChange = (e: any) => {
     setTrump(e.target.value);
