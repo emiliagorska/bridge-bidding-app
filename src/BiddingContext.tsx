@@ -4,7 +4,7 @@ export const BiddingContext = createContext(null);
 
 export const BiddingDispatchContext = createContext(null);
 
-function biddingReducer(bidding, action) {
+function biddingReducer(bidding: any, action: any) {
   switch (action.type) {
     case "added": {
       return [
@@ -37,11 +37,16 @@ function biddingReducer(bidding, action) {
   }
 }
 
-export const BiddingProvider = ({ children }) => {
+export const BiddingProvider = ({
+  children
+}: any) => {
+  // @ts-expect-error TS(2769): No overload matches this call.
   const [bidding, dispatch] = useReducer(biddingReducer, "");
 
   return (
+    // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
     <BiddingContext.Provider value={bidding}>
+      {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
       <BiddingDispatchContext.Provider value={dispatch}>
         {children}
       </BiddingDispatchContext.Provider>

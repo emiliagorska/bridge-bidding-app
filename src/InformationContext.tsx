@@ -4,7 +4,7 @@ export const InformationContext = createContext(null);
 
 export const InformationDispatchContext = createContext(null);
 
-function informationReducer(information, action) {
+function informationReducer(information: any, action: any) {
   switch (action.type) {
     case "added": {
       return [
@@ -38,11 +38,16 @@ function informationReducer(information, action) {
   }
 }
 
-export const InformationProvider = ({ children }) => {
+export const InformationProvider = ({
+  children
+}: any) => {
+  // @ts-expect-error TS(2769): No overload matches this call.
   const [information, dispatch] = useReducer(informationReducer, "");
 
   return (
+    // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
     <InformationContext.Provider value={information}>
+      {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
       <InformationDispatchContext.Provider value={dispatch}>
         {children}
       </InformationDispatchContext.Provider>

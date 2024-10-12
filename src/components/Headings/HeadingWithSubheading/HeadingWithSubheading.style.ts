@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 
-export const StyledContainer = styled.div`
-  margin-bottom: ${(props) => props.marginBottom && props.marginBottom};
-  margin-top: ${(props) => props.marginTop && props.marginTop};
+export const StyledContainer = styled.div `
+  margin-bottom: ${(props) => (props as any).marginBottom && (props as any).marginBottom};
+  margin-top: ${(props) => (props as any).marginTop && (props as any).marginTop};
 `;
 
 export const StyledHeading = styled.h2`

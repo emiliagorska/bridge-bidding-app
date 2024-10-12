@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { Button } from "@mui/material";
 
-export const StyledButton = styled.button`
+export const StyledButton = styled.button `
   width: 100%;
   height: 64px;
   padding: 0px 8px;
@@ -19,6 +19,6 @@ export const StyledButton = styled.button`
     background-color: rgba(18, 165, 130, 0.59);
     color: #f8f8f8;
   }
-  margin-bottom: ${(props) => props.marginBottom && props.marginBottom};
-  margin-top: ${(props) => props.marginTop && props.marginTop};
+  margin-bottom: ${(props) => (props as any).marginBottom && (props as any).marginBottom};
+  margin-top: ${(props) => (props as any).marginTop && (props as any).marginTop};
 `;

@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const StyledSmallOptionButton = styled.button`
+export const StyledSmallOptionButton = styled.button `
   top: 98px;
   left: 20px;
   height: 56px;
@@ -10,8 +10,8 @@ export const StyledSmallOptionButton = styled.button`
   border-radius: 8px;
   border: none;
   box-sizing: border-box;
-  margin-bottom: ${(props) => props.marginBottom && props.marginBottom};
-  margin-top: ${(props) => props.marginTop && props.marginTop};
+  margin-bottom: ${(props) => (props as any).marginBottom && (props as any).marginBottom};
+  margin-top: ${(props) => (props as any).marginTop && (props as any).marginTop};
   font-size: 18px;
   font-family: "Rubik";
   line-height: 26px;

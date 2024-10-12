@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { StyledDiv, StyledTextField } from "./CardDistribution.style";
 
-const CardDistribution = ({ handleError, handleDistributionChange }) => {
+const CardDistribution = ({
+  handleError,
+  handleDistributionChange
+}: any) => {
   const [numbersArray, setNumbersArray] = useState([0, 0, 0, 0]);
 
   useEffect(() => {
     var sumOfNumbers = numbersArray.reduce(function (a, b) {
+      // @ts-expect-error TS(2345): Argument of type 'number' is not assignable to par... Remove this comment to see the full error message
       return parseInt(a) + parseInt(b);
     });
     if (sumOfNumbers !== 13) {
@@ -21,32 +25,20 @@ const CardDistribution = ({ handleError, handleDistributionChange }) => {
     }
   }, [numbersArray]);
 
-  return (
-    <>
+  // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
+  return (<>
+      {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
       <StyledDiv>
-        <StyledTextField
-          onChange={(e) =>
-            setNumbersArray(numbersArray.with(0, e.target.value))
-          }
-        ></StyledTextField>
-        <StyledTextField
-          onChange={(e) =>
-            setNumbersArray(numbersArray.with(1, e.target.value))
-          }
-        ></StyledTextField>
-        <StyledTextField
-          onChange={(e) =>
-            setNumbersArray(numbersArray.with(2, e.target.value))
-          }
-        ></StyledTextField>
-        <StyledTextField
-          onChange={(e) =>
-            setNumbersArray(numbersArray.with(3, e.target.value))
-          }
-        ></StyledTextField>
+        {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
+        <StyledTextField onChange={(e) => setNumbersArray((numbersArray as any).with(0, e.target.value))}></StyledTextField>
+        {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
+        <StyledTextField onChange={(e) => setNumbersArray((numbersArray as any).with(1, e.target.value))}></StyledTextField>
+        {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
+        <StyledTextField onChange={(e) => setNumbersArray((numbersArray as any).with(2, e.target.value))}></StyledTextField>
+        {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
+        <StyledTextField onChange={(e) => setNumbersArray((numbersArray as any).with(3, e.target.value))}></StyledTextField>
       </StyledDiv>
-    </>
-  );
+    </>);
 };
 
 export default CardDistribution;

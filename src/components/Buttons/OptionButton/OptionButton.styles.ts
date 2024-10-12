@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const StyledOptionButton = styled.button`
+export const StyledOptionButton = styled.button `
   top: 98px;
   left: 20px;
   width: 100%;
@@ -10,8 +10,8 @@ export const StyledOptionButton = styled.button`
   border-radius: 8px;
   border: none;
   box-sizing: border-box;
-  margin-bottom: ${(props) => props.marginBottom && props.marginBottom};
-  margin-top: ${(props) => props.marginTop && props.marginTop};
+  margin-bottom: ${(props) => (props as any).marginBottom && (props as any).marginBottom};
+  margin-top: ${(props) => (props as any).marginTop && (props as any).marginTop};
   //CURRENTLY NOT WORKING, NEED TO FIND A WAY TO REMOVE THE OUTLINE
   // &:focus {
   //   border: none !important;
