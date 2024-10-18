@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from "react";
-import {
-  StyledDiv,
-  StyledTextField,
-} from "./CardDistribution.style";
+import { StyledDiv, StyledTextField } from "./CardDistribution.style";
 
-const CardDistribution = ({
-  handleError,
-  handleDistributionChange,
-}) => {
+const CardDistribution = ({ handleError, handleDistributionChange }) => {
   const [numbersArray, setNumbersArray] = useState([0, 0, 0, 0]);
 
   useEffect(() => {
